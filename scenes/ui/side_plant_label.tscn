@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk3pjg02x7tj"]
+
+[ext_resource type="Theme" uid="uid://c501hq4cbq0w7" path="res://theme.tres" id="1_1qwhc"]
+
+[node name="SidePlantLabel" type="HBoxContainer"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 376.0
+offset_bottom = 48.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("1_1qwhc")
+text = "🥭Mangifera Indica"

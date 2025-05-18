@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://biej1nm2iiblh"]
+
+[ext_resource type="Theme" uid="uid://c501hq4cbq0w7" path="res://theme.tres" id="1_5tqaf"]
+[ext_resource type="PackedScene" uid="uid://bk3pjg02x7tj" path="res://scenes/ui/side_plant_label.tscn" id="2_cw2ld"]
+
+[node name="SideList" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -391.0
+offset_top = 34.0
+offset_right = -45.0
+offset_bottom = 34.0
+grow_horizontal = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -18.0
+offset_right = 17.0
+offset_bottom = 587.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_5tqaf")
+color = Color(0.741176, 0.866667, 0.74902, 0.827451)
+
+[node name="SideListContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -346.0
+offset_bottom = 111.0
+grow_horizontal = 0
+theme_override_constants/separation = 25
+
+[node name="SidePlantLabel" parent="SideListContainer" instance=ExtResource("2_cw2ld")]
+layout_mode = 2
+
+[node name="SidePlantLabel2" parent="SideListContainer" instance=ExtResource("2_cw2ld")]
+layout_mode = 2
