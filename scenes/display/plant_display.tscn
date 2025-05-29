@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://rv63nqgefaor"]
+
+[ext_resource type="Script" uid="uid://c1vmuq7tmqjqh" path="res://scenes/display/plant_display.gd" id="1_4rohw"]
+[ext_resource type="Texture2D" uid="uid://checja82w80bb" path="res://icon.svg" id="2_6ioew"]
+
+[node name="PlantDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4rohw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_6ioew")

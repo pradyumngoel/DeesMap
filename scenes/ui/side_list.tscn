@@ -1,46 +1,72 @@
-[gd_scene load_steps=3 format=3 uid="uid://biej1nm2iiblh"]
+[gd_scene load_steps=6 format=3 uid="uid://biej1nm2iiblh"]
 
 [ext_resource type="Theme" uid="uid://c501hq4cbq0w7" path="res://theme.tres" id="1_5tqaf"]
+[ext_resource type="Script" uid="uid://c1kc16leo1dm2" path="res://scenes/ui/side_list.gd" id="1_p0ffb"]
 [ext_resource type="PackedScene" uid="uid://bk3pjg02x7tj" path="res://scenes/ui/side_plant_label.tscn" id="2_cw2ld"]
+[ext_resource type="StyleBox" uid="uid://dj1v5yu3dajec" path="res://scenes/ui/close_button_hover.tres" id="4_7g50p"]
+[ext_resource type="StyleBox" uid="uid://cxyoemynjmp4m" path="res://scenes/ui/close_button_stylebox.tres" id="4_21fff"]
 
 [node name="SideList" type="Control"]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -391.0
-offset_top = 34.0
-offset_right = -45.0
-offset_bottom = 34.0
 grow_horizontal = 0
+script = ExtResource("1_p0ffb")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -14.0
-offset_top = -18.0
-offset_right = 17.0
-offset_bottom = 587.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme = ExtResource("1_5tqaf")
-color = Color(0.741176, 0.866667, 0.74902, 0.827451)
-
-[node name="SideListContainer" type="VBoxContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -346.0
-offset_bottom = 111.0
+offset_left = -461.0
+offset_top = 23.0
+offset_right = -27.0
+offset_bottom = 623.0
 grow_horizontal = 0
-theme_override_constants/separation = 25
+theme = ExtResource("1_5tqaf")
 
-[node name="SidePlantLabel" parent="SideListContainer" instance=ExtResource("2_cw2ld")]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(300, 600)
+layout_mode = 2
+theme = ExtResource("1_5tqaf")
+horizontal_scroll_mode = 0
+
+[node name="SideListContainer" type="VBoxContainer" parent="PanelContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_5tqaf")
+
+[node name="SidePlantButton" parent="PanelContainer/ScrollContainer/SideListContainer" instance=ExtResource("2_cw2ld")]
 layout_mode = 2
 
-[node name="SidePlantLabel2" parent="SideListContainer" instance=ExtResource("2_cw2ld")]
+[node name="SidePlantButton5" parent="PanelContainer/ScrollContainer/SideListContainer" instance=ExtResource("2_cw2ld")]
 layout_mode = 2
+
+[node name="SidePlantButton6" parent="PanelContainer/ScrollContainer/SideListContainer" instance=ExtResource("2_cw2ld")]
+layout_mode = 2
+
+[node name="SidePlantButton7" parent="PanelContainer/ScrollContainer/SideListContainer" instance=ExtResource("2_cw2ld")]
+layout_mode = 2
+
+[node name="SidePlantButton4" parent="PanelContainer/ScrollContainer/SideListContainer" instance=ExtResource("2_cw2ld")]
+layout_mode = 2
+
+[node name="SidePlantButton2" parent="PanelContainer/ScrollContainer/SideListContainer" instance=ExtResource("2_cw2ld")]
+layout_mode = 2
+
+[node name="SidePlantButton3" parent="PanelContainer/ScrollContainer/SideListContainer" instance=ExtResource("2_cw2ld")]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 8.0
+offset_right = -12.0
+offset_bottom = 48.0
+theme_override_styles/hover = ExtResource("4_7g50p")
+theme_override_styles/pressed = ExtResource("4_21fff")
+theme_override_styles/normal = ExtResource("4_21fff")
+text = "X"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

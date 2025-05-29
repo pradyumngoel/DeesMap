@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c501hq4cbq0w7"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://c501hq4cbq0w7"]
 
 [ext_resource type="StyleBox" uid="uid://cfujknlyf22n4" path="res://scenes/ui/normal_style_box.tres" id="1_dl47q"]
 [ext_resource type="FontFile" uid="uid://dv2ti4ed1h64n" path="res://art/static/Montserrat-Medium.ttf" id="1_fdp56"]
@@ -50,6 +50,29 @@ shadow_color = Color(0.168627, 0.27451, 0.145098, 0.792157)
 shadow_size = 1
 shadow_offset = Vector2(2, 2)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05tig"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.662745, 0.847059, 0.745098, 0.803922)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.466667, 0.917647, 0.494118, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_color = Color(0.168627, 0.27451, 0.145098, 0.792157)
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_disabled_color = Color(1, 1, 1, 1)
@@ -58,19 +81,13 @@ Button/colors/font_hover_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(1, 1, 1, 1)
 Button/colors/font_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
-Button/colors/icon_focus_color = Color(0, 0, 0, 1)
-Button/colors/icon_hover_color = Color(0, 0, 0, 1)
-Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-Button/colors/icon_normal_color = Color(0, 0, 0, 1)
-Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
 Button/constants/h_separation = 0
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 35
 Button/fonts/font = ExtResource("1_fdp56")
 Button/styles/disabled = ExtResource("1_dl47q")
-Button/styles/focus = ExtResource("1_dl47q")
+Button/styles/focus = null
 Button/styles/hover = SubResource("StyleBoxFlat_vj6dk")
 Button/styles/normal = ExtResource("1_dl47q")
 Button/styles/pressed = SubResource("StyleBoxFlat_110ce")
@@ -85,3 +102,6 @@ Label/constants/shadow_outline_size = 0
 Label/font_sizes/font_size = 16
 Label/fonts/font = ExtResource("1_wbvnr")
 Label/styles/normal = ExtResource("1_dl47q")
+Panel/styles/panel = ExtResource("1_dl47q")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_05tig")
+VBoxContainer/constants/separation = 25

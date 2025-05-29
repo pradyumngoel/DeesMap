@@ -1,14 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk3pjg02x7tj"]
+[gd_scene load_steps=4 format=3 uid="uid://bk3pjg02x7tj"]
 
 [ext_resource type="Theme" uid="uid://c501hq4cbq0w7" path="res://theme.tres" id="1_1qwhc"]
+[ext_resource type="Script" uid="uid://cvwc1272j3aar" path="res://scenes/ui/side_plant_label.gd" id="1_r6xid"]
+[ext_resource type="Texture2D" uid="uid://checja82w80bb" path="res://icon.svg" id="3_iuw3q"]
 
 [node name="SidePlantLabel" type="HBoxContainer"]
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 376.0
-offset_bottom = 48.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 429.0
+offset_bottom = 131.0
+script = ExtResource("1_r6xid")
 
-[node name="Button" type="Button" parent="."]
+[node name="SidePlantButton" type="Button" parent="."]
+custom_minimum_size = Vector2(426, 128)
 layout_mode = 2
 theme = ExtResource("1_1qwhc")
-text = "🥭Mangifera Indica"
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "Mangifera Indica"
+icon = ExtResource("3_iuw3q")
+
+[connection signal="mouse_entered" from="SidePlantButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="SidePlantButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="SidePlantButton" to="." method="_on_side_plant_button_pressed"]

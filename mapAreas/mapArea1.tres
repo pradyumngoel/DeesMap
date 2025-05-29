@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="MapArea" load_steps=7 format=3 uid="uid://67alyecdv4j6"]
+
+[ext_resource type="Script" uid="uid://bcmm4a0a8r1y0" path="res://custom_resources/plant.gd" id="1_8ut1r"]
+[ext_resource type="Texture2D" uid="uid://checja82w80bb" path="res://icon.svg" id="2_36qlq"]
+[ext_resource type="Script" uid="uid://reha4eo5gqc1" path="res://custom_resources/MapArea.gd" id="2_52wa2"]
+
+[sub_resource type="Resource" id="Resource_ugp6k"]
+script = ExtResource("1_8ut1r")
+plantName = "Mango"
+plantIcon = ExtResource("2_36qlq")
+plantPos = Vector2(132, 162)
+plantDescription = "Those who mango"
+metadata/_custom_type_script = "uid://bcmm4a0a8r1y0"
+
+[sub_resource type="Resource" id="Resource_b314l"]
+script = ExtResource("1_8ut1r")
+plantName = "Banana"
+plantIcon = ExtResource("2_36qlq")
+plantPos = Vector2(369, 316)
+plantDescription = "Sogma gaming"
+metadata/_custom_type_script = "uid://bcmm4a0a8r1y0"
+
+[sub_resource type="Resource" id="Resource_52wa2"]
+script = ExtResource("1_8ut1r")
+plantName = "Dragonfruit"
+plantIcon = ExtResource("2_36qlq")
+plantPos = Vector2(136, 472)
+plantDescription = "Money is cool"
+metadata/_custom_type_script = "uid://bcmm4a0a8r1y0"
+
+[resource]
+script = ExtResource("2_52wa2")
+areaName = "Area1"
+areaPlants = Array[ExtResource("1_8ut1r")]([SubResource("Resource_ugp6k"), SubResource("Resource_b314l"), SubResource("Resource_52wa2")])
+metadata/_custom_type_script = "uid://reha4eo5gqc1"

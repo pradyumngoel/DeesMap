@@ -1,21 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://c22ru6qelm7d1"]
+[gd_scene load_steps=6 format=3 uid="uid://c22ru6qelm7d1"]
 
 [ext_resource type="Script" uid="uid://b8qyabi2rkv5f" path="res://scenes/main.gd" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://chuh1uwan4jvc" path="res://art/map.png" id="1_flqhv"]
+[ext_resource type="PackedScene" uid="uid://84m1vp5m0v2n" path="res://scenes/map/map_area_detector.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://biej1nm2iiblh" path="res://scenes/ui/side_list.tscn" id="3_sugp2"]
+[ext_resource type="Resource" uid="uid://67alyecdv4j6" path="res://mapAreas/mapArea1.tres" id="3_tbgi4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0wfyh")
 
-[node name="Areas" type="Area2D" parent="."]
-disable_mode = 2
-priority = 1
+[node name="MapAreaDetector" parent="." instance=ExtResource("2_jyhfs")]
+area = ExtResource("3_tbgi4")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Areas"]
-polygon = PackedVector2Array(104, 33, 598, 23, 602, 181, 466, 224, 317, 347, 108, 366)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Areas"]
-polygon = PackedVector2Array(678, 24, 637, 200, 676, 261, 883, 355, 969, 504, 1067, 524, 1064, 33)
+[node name="CollisionPolygon2D" parent="MapAreaDetector" index="0"]
+polygon = PackedVector2Array(146, 39, 151, 541, 283, 549, 364, 331, 550, 163, 550, 33)
 
 [node name="Map" type="CanvasLayer" parent="."]
 layer = 0
@@ -26,18 +24,8 @@ z_index = 1
 texture = ExtResource("1_flqhv")
 centered = false
 
-[node name="Control" type="Control" parent="Map"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Background" type="ColorRect" parent="Map/Control"]
+[node name="Background" type="ColorRect" parent="Map"]
 z_index = -3
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -46,6 +34,12 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.894118, 0.992157, 0.917647, 0.952941)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="AreaLayer" type="CanvasLayer" parent="."]
 
-[node name="SideList" parent="CanvasLayer" instance=ExtResource("3_sugp2")]
+[node name="Area" type="Node2D" parent="AreaLayer"]
+unique_name_in_owner = true
+
+[node name="SideList" parent="AreaLayer" instance=ExtResource("3_sugp2")]
+unique_name_in_owner = true
+
+[editable path="MapAreaDetector"]

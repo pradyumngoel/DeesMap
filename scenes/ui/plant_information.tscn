@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpuxwarqnbisl"]
+
+[ext_resource type="StyleBox" uid="uid://dj1v5yu3dajec" path="res://scenes/ui/close_button_hover.tres" id="1_trk40"]
+[ext_resource type="Script" uid="uid://0vlqoxbac411" path="res://scenes/ui/plant_information.gd" id="1_vibop"]
+[ext_resource type="StyleBox" uid="uid://cxyoemynjmp4m" path="res://scenes/ui/close_button_stylebox.tres" id="2_vibop"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bs42l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uw5ev"]
+font_size = 80
+
+[node name="PlantInformation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 62.0
+offset_right = -371.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vibop")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+offset_right = 641.0
+offset_bottom = 530.0
+color = Color(0.0745098, 0.0745098, 0.0745098, 0.784314)
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 442.0
+offset_right = 85.0
+offset_bottom = 493.0
+theme_override_styles/hover = ExtResource("1_trk40")
+theme_override_styles/pressed = ExtResource("2_vibop")
+theme_override_styles/normal = ExtResource("2_vibop")
+text = "CLOSE"
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 168.0
+offset_right = 225.0
+offset_bottom = 189.0
+text = "It is the king of fruits"
+label_settings = SubResource("LabelSettings_bs42l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 46.0
+offset_top = 296.0
+offset_right = 46.0
+offset_bottom = 395.0
+
+[node name="PlantName" type="Label" parent="."]
+layout_mode = 2
+offset_left = 35.0
+offset_top = 42.0
+offset_right = 369.0
+offset_bottom = 141.0
+text = "MANGO"
+label_settings = SubResource("LabelSettings_uw5ev")
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
